@@ -43,11 +43,11 @@ public class DepartmentImpl implements DepartmentService {
         }
 
         if(Objects.nonNull(department.getDepartmentCode()) && ! "".equalsIgnoreCase(department.getDepartmentCode())) {
-            departmentDB.setDepartmentName(department.getDepartmentCode());
+            departmentDB.setDepartmentCode(department.getDepartmentCode());
         }
 
         if(Objects.nonNull(department.getDepartmentAddress()) && ! "".equalsIgnoreCase(department.getDepartmentAddress())) {
-            departmentDB.setDepartmentName(department.getDepartmentAddress());
+            departmentDB.setDepartmentAddress(department.getDepartmentAddress());
         }
 
         return departmentRepository.save(departmentDB);
