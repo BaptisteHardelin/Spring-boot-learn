@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/departments")
@@ -15,13 +16,17 @@ public class DepartmentController {
     @Autowired
     private DepartmentService departmentService;
 
+    private final Logger logger = Logger.getLogger(DepartmentController.class.getName());
+
     @PostMapping
     public Department saveDepartment(@Valid @RequestBody Department department) {
+        logger.info("Inside saveDepartment of DepartmentController");
         return departmentService.saveDepartment(department);
     }
 
     @GetMapping
     public List<Department> fetchDepartmentList() {
+        logger.info("Inside fetchDepartmentList of DepartmentController");
         return departmentService.fetchDepartmentList();
     }
 
