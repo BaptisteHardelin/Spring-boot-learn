@@ -1,11 +1,10 @@
 spring:
-  h2:
-    console:
-      enabled: true
-  datasource:
-    url: 'jdbc:h2:mem:dcbapp'
-    driverClassName: 'org.h2.Driver'
-    username: 'sa'
-    password: 'password'
   jpa:
-    database-platform: 'org.hibernate.dialect.H2Dialect'
+    hibernate:
+        ddl-auto: update
+    show-sql: true
+  datasource:
+    url: 'jdbc:mysql://localhost:3306/departmentapp'
+    username: root
+    password: root
+    driver-class-name: 'com.mysql.jdbc.Driver'
