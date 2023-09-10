@@ -1,6 +1,7 @@
 package fr.babaprog.spring.boot.tutorial.controller;
 
 import fr.babaprog.spring.boot.tutorial.entity.Department;
+import fr.babaprog.spring.boot.tutorial.error.DepartmentNotFoundException;
 import fr.babaprog.spring.boot.tutorial.service.DepartmentService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,7 @@ public class DepartmentController {
     }
 
     @GetMapping("/{id}")
-    public Department fetchDepartmentById(@PathVariable("id") Long departmentId) {
+    public Department fetchDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException {
         return departmentService.fetchDepartmentById(departmentId);
     }
 
