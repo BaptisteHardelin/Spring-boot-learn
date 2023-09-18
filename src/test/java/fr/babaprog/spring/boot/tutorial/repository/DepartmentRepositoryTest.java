@@ -1,7 +1,6 @@
 package fr.babaprog.spring.boot.tutorial.repository;
 
 import fr.babaprog.spring.boot.tutorial.entity.Department;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,11 +29,6 @@ class DepartmentRepositoryTest {
                 .departmentCode("ME-011")
                 .departmentAddress("Delhi")
                 .build();
-    }
-
-    @AfterEach
-    public void clearDB() {
-        departmentRepository.deleteAll();
     }
 
     @Test
